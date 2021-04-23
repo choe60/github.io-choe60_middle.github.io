@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Home</title>
+        <meta charset="utf-8"/>
+        <style>
+            .wrap{
+                /*width:1200px; */
+                max-width: 1600;
+                min-width: 1100;
+                margin: 0px auto;
+            }
+            header>ul>li{
+                /*normal 마우스가 얹어지지 않았을 때*/
+                list-style: none;
+                float: left; /*왼쪽부터 흐르듯이*/
+                border-right: solid 1px gray;
+                /* margin: 20px; */
+                padding: 0px 20px; /*상하 좌우*/
+            }
+            header>ul>li:last-child{
+                border: none; /*경계선 없음*/
+            }
+            .float_left{
+                float:left;
+            }
+            .float_right{
+                float:right;
+            }
+            header>h1{
+                margin: 5px 0px;
+            }
+            header>div{
+                margin: 15px 0px;
+            }
+            header>ul{
+                padding: 0px;
+                margin: 16px 50px;
+            }
+            nav{
+                background-color: #ffffff;
+            }
+            nav>ul>li{
+                list-style: none;
+                float:left;
+                padding: 0px 10px;
+                text-align: center;
+            }
+            nav>ul{
+                padding: 0px;
+                margin: 16px 50px;
+            }
+            nav>h2{
+                margin: 8px 0px;
+            }
+            header>ul>li>a{
+                color: black;
+                text-decoration: none;
+            }
+            header>ul>li>a:hover{
+                /*마우스가 없어졌을 때*/
+                color: #41a546;
+                transition : 0.4s;
+            }
+
+
+            .short_line{
+                border-top: solid 1px gray; /*보더의 방향지정*/
+                width: 30px;
+            }
+
+            .card{
+                width:310px;
+                background-color:white;
+                border-right : solid 1px gray;
+                border-bottom: solid 1px gray;
+                margin :10px;
+                float: left;
+            }
+            .card_top{
+                position: relative; /*관계형위치 지정방식*/
+                /*absolute의 객체의 부모가 relative면 자식객체의 기준이 됨*/
+            }
+            .card_top div{
+                background-color: black;
+                color: white;
+                display: inline-block;
+                padding: 5px 10px 7px 10px;
+                position: absolute; /*절대 위치 지정방식*/
+                left: 0px;
+                bottom: 0px;
+            }
+            .card_top img{
+                display: block;
+            }
+            .card_bottom{
+                padding : 30px;
+            }
+            .clearfix::after{ /*float left 문제 해결*/
+                content: ""; /* 브라우저 호환성 문제 해결 */
+                clear: both; /* float 종료 */
+                display: table; /* 브라우저 호환성 문제 해결 */
+            }
+            .date_p{
+                color: gray;
+            }
+            .long_line{
+                border-top: dotted 1px #FEC113;
+                width: 150px;
+            }
+            h5{
+                color:
+            }
+
+
+
+
+            header{
+                background-color:#ffffff;
+                color:#0D8C43;
+                padding: 0px 0px;
+                text-size-adjust: 10px;
+            }
+            nav,footer{
+                padding: 20px;
+            }
+            .content section{
+                padding: 20px;
+            }
+            .content section:nth-child(1){
+                background-color:#ffffff;
+            }
+            .content section:nth-child(2){
+                background-color:#ffffff;
+            }
+            .content section:nth-child(3){
+                background-color:#ffffff;
+            }
+            .content section:nth-child(4){
+                background-color:#ffffff;
+            }
+            .content section:nth-child(5){
+                background-color:#ffffff;
+            }
+            .content section:nth-child(6){
+                background-color:#ffffff;
+            }
+            .content section:nth-child(7){
+                background-color:#ffffff;
+            }
+            .content section:nth-child(8){
+                background-color :#FEC113;
+            }
+            .content section h3{
+                color: #0D8C43;
+            }
+            .content section h2{
+                color: #0D8C43;
+            }
+            .content section h1{
+                color: #010201;
+                text-decoration-line: initial;
+            }
+            .content section div{
+                width: 1000px;
+                margin: 0px auto; /*좌우 여백 자동*/
+            }
+            .content .content_part{
+                float:left;
+                width:480px;
+                margin: 0px 10px;
+            }
+            .content_part dt{
+                font-weight: bold;
+                margin: 10px 0px;
+            }
+            .content_part dd{
+                margin: 0px;
+
+            }
+            .sns_list li{
+                list-style: none; /* li 왼쪽 점 삭제 */
+                float: left;
+                padding: 0px 10px;
+            }
+            .sns_list{
+                position: absolute;
+                top: 0; right: 0;
+                display: flex;
+            }
+            .sns_list img{
+                width: 40px;
+                height: 40px;
+            }
+            footer{
+                position: relative;
+            }
+            .footer_part{
+                float: left;
+            }
+            footer{
+                background-color:  #d3f860;
+                color: rgb(255, 255, 255);
+            }
+            footer ul{
+                margin: 0px;
+                padding: 0px;
+            }
+            footer ul li{
+                list-style: none;
+                float: left;
+                padding: 0px 10px;
+            }
+            #footer_left li{
+                border-right:solid 1px gray;
+            }
+            #footer_left li:last-child{
+                border: none;
+            }
+            .clearfix::after{
+                content:"";/*브라우저 호환성 문제해결*/
+                clear: both;/*float 종료 떠다니지 않게 함.*/
+                display: table;/*브라우저 호환성 문제해결*/
+            }
+            #main_visual{
+                background-image: url("img/1.png");
+                background-color: #d3f860;
+                background-repeat: no-repeat;
+                background-position: 50% 50% ; /* x가로px, y세로px */ /* 퍼센트로도 지정할 수 있음*/
+                background-size: auto; /* 가로 200, 세로 비율맞추기 */
+                background-size: contain; /* 담기 */
+                background-size: cover; /* 덮어씌우기 */
+                color: white;
+                text-align: center; /*글씨 가운데 정렬*/
+                padding: 100px;
+            }
+            dd{
+                color: rgb(145, 145, 145);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrap">
+            <header class="clearfix">
+                <h1 class="float_left"><img width='160px' src="img/logo3.png"></h1>
+                <ul class="float_right clearfix">
+                    <li><a href='index.html'><b>HOME</b></a></li>
+                    <li><a href='howtomake.html'><b>How to make</b></a></li>
+                    <li><a href='product.html'><b>Product</b></a></li>
+                </ul>
+            </header>
+
+            <div id="main_visual">
+                <h1>&nbsp;</h1>
+                <h1>&nbsp;</h1>
+            </div>
+
+            <div class="content">
+                <section>
+                    <div class="clearfix">
+                        <b><h1>지속가능성을 위한 소재 선택</h1></b>
+                        <hr/>
+                        <br/>
+                        <b><h3>제로 폐기물을 향한 여정</h3></b>
+                        <img width='1000px' src="img/8.png">
+
+
+
+                        <P>
+                          소재는 모든 제품의 탄소발자국에 70% 이상을 차지하기 때문에,
+                          제로탄소와 제로 폐기물을 향한 여정에서 소재 선택을 가장 중요하게 생각합니다.
+                          기존의 플라스틱, 실, 섬유 등을 재사용함으로써 폐기물 배출량을 대폭 줄여나가고 있습니다.
+
+                        </P>
+                        <br/>
+                        <br/>
+
+                        <b><h3>나이키 플라이 레더</h3></b>
+                          <img width='1000px' src="img/9.png">
+
+                        <p>나이키 플라이니트는 기존의 갑피 제작 방식에 비해 폐기물 배출량이 평균 60% 적은 정밀 설계로 제작된 경량의 소재입니다.
+                        플라이니트로 신발 한켤레의 갑피를 만들때 6-7개의 플라스틱 물병이 재활용됩니다. </p>
+
+                        <b><h3>나이키 플라이 니트</h3></b>
+                          <img width='1000px' src="img/10.png">
+
+                        <p>나이키 플라이니트는 기존의 갑피 제작 방식에 비해 폐기물 배출량이 평균 60% 적은 정밀 설계로 제작된 경량의 소재입니다.
+                        플라이니트로 신발 한켤레의 갑피를 만들때 6-7개의 플라스틱 물병이 재활용됩니다. </p>
+
+                        <b><h3>나이키 에어</h3></b>
+                          <img width='1000px' src="img/12.png">
+
+                        <p>2008년부터 모든 나이키 에어솔의 최소 50% 이상이 재활용 제조 폐기물로 제작되었습니다.</p>
+
+                        <b><h3>재활용 폴리에스터</h3></b>
+                          <img width='1000px' src="img/13.png">
+
+                        <p>나이키의 재활용 폴리에스터는 플라스틱 물병을 세척하여 잘게 조각낸, 작은 알갱이로부터 탄생한 고품질의 실입니다.
+                          재활용 폴리에스터는 폐기물을 줄여줄 뿐만 아니라 버진 폴리에스터보다 탄소 배출량을 최대 30%로 까지 감소시켜줍니다.
+
+                        <b><h3>지속가능한 면 소재</h3></b>
+                            <img width='1000px' src="img/14.png">
+
+                        <p>2020년 현재, 전체 제품의 면소재는 인증받은 유기농 및 재활용 원료와 ‘Better Cotton Initiative’
+                            허가를 받은 코튼을 100% 사용하고 있습니다.
+                            나이키는 노동자와 농부의 권리를 존중하여 화석 연료에서 유래된 농약이나 합성 비료를 사용하지 않고 매년 면화를 재활용하고
+                            있습니다.
+                        </p>
+
+                        <b><h3>재활용 나일론</h3></b>
+                            <img width='1000px' src="img/15.png">
+
+
+                        <img width='1000px' src="img/logo3.png">
+                        <p>나이키의 재활용 나일론은 카펫이나 버려지는 어망과 같은 다양한 재료들을 재사용하여 만들어집니다.
+                        </p> <br><br>
+
+            </div>
+            <footer class="clearfix">
+                <div class="float_left footer_part">
+                    <ul class="sns_list">
+
+                      <li><a href="https://www.instagram.com/nike/"><img width="24px"src="img/instagram.png"></a></li>
+
+                    </ul>
+
+
+                    <ul id="footer_left" class="clearfix">
+                        <li>Home</li>
+                        <li>About</li>
+                        <li>Services</li>
+                        <li>Work</li>
+                        <li>Blog</li>
+                        <li>Contact Us</li>
+                    </ul>
+                    <p>
+                        ⓒ 2020 YuKyung Choi. All Right Reserved.
+                    </p>
+                    <p>
+                        the layout in the design are the property
+                        of their respective owners/copyright
+                        holders.
+                    </p>
+
+            </footer>
+        </div>
+    </body>
+</html>
